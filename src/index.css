@@ -1,0 +1,286 @@
+@import "tailwindcss";
+
+/* ── Custom Design Tokens ─────────────────────────────── */
+:root {
+  --gradient-primary: linear-gradient(135deg, #6366f1, #8b5cf6, #a855f7);
+  --gradient-accent: linear-gradient(135deg, #06b6d4, #3b82f6, #6366f1);
+  --gradient-warm: linear-gradient(135deg, #f97316, #ef4444, #ec4899);
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --surface: #12121a;
+  --surface-hover: #1a1a2e;
+}
+
+/* ── Base Styles ──────────────────────────────────────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #0a0a0f;
+  color: #e2e8f0;
+  overflow-x: hidden;
+}
+
+/* ── Scrollbar ────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0f;
+}
+::-webkit-scrollbar-thumb {
+  background: #6366f1;
+  border-radius: 999px;
+}
+
+/* ── Selection ────────────────────────────────────────── */
+::selection {
+  background: rgba(99, 102, 241, 0.3);
+  color: #fff;
+}
+
+/* ── Utility animations ──────────────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(99, 102, 241, 0.6); }
+}
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes typewriter-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+.animate-gradient { 
+  background-size: 200% 200%; 
+  animation: gradient-shift 4s ease infinite; 
+}
+.animate-fade-in-up { animation: fade-in-up 0.8s ease forwards; }
+.animate-slide-left { animation: slide-in-left 0.8s ease forwards; }
+.animate-slide-right { animation: slide-in-right 0.8s ease forwards; }
+
+/* ── Glass Card ───────────────────────────────────────── */
+.glass-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(99, 102, 241, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(99, 102, 241, 0.1);
+}
+
+/* ── Gradient Text ────────────────────────────────────── */
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.gradient-text-accent {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Glow Button ──────────────────────────────────────── */
+.glow-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #fff;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.glow-btn::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6, #a855f7);
+  border-radius: 14px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.glow-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99, 102, 241, 0.4);
+}
+.glow-btn:hover::before {
+  opacity: 1;
+}
+
+.glow-btn-outline {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #a5b4fc;
+  background: transparent;
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.glow-btn-outline:hover {
+  background: rgba(99, 102, 241, 0.1);
+  border-color: #6366f1;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ── Section title ────────────────────────────────────── */
+.section-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+/* ── Noise overlay (subtle texture) ───────────────────── */
+.noise-overlay::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.015;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+.hidden-items{
+  padding: 10px;
+  margin: 5px;
+}
+
+.available{
+  padding: 5px;
+}
+
+.badge-box{
+  padding-left: 5px;
+}
+
+.myname,.tagline-box,.typewriter-box,.cta-box,.scroll-box{
+  margin-top: 15px;
+}
+
+.about-box,.about-title{
+  margin-left: 160px;
+}
+
+.about-box1{
+  padding: 10px;
+}
+
+.tagsabout-box,.tagabout-box{
+  padding:5px ;
+}
+
+.icon-about{
+  padding-top: 20px;
+}
+
+.skills-box{
+  margin-left: 160px;
+}
+
+.skills-para,.projects-para,.contact-para{
+  padding: 5px;
+}
+
+.decorate-line{
+  margin: 30px;
+}
+
+.skill-box{
+  padding: 5px;
+}
+
+.projects-box{
+  margin-left: 160px;
+}
+
+.project-box{
+  padding: 5px;
+}
+
+.project-tech{
+  margin-top: 5px;
+  padding: 3px;
+}
+
+.experience-box{
+  margin-left: 160px;
+}
+
+.experience-container{
+  padding: 15px;
+}
+
+.exp-skill-box{
+  padding: 3px;
+}
+
+.work-education-box{
+  padding: 2px;
+}
+
+#contact{
+ display: flex;
+ justify-content: center;
+}
+
+.contact-para{
+  padding: 5px;
+}
+
+.info-box,.social-links{
+  padding: 15px;
+}
+
+.info-social-links{
+  display: flex;
+  justify-content: center;
+}
