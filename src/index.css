@@ -284,3 +284,34 @@ body {
   display: flex;
   justify-content: center;
 }
+
+@media (max-width: 768px){
+  .about-box,.about-title{
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .skills-box{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.projects-box{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.experience-box{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#contact{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+
+
+}
+
