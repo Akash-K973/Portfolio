@@ -196,10 +196,12 @@ body {
 
 .available{
   padding: 5px;
+  
 }
 
 .badge-box{
   padding-left: 5px;
+  
 }
 
 .myname,.tagline-box,.typewriter-box,.cta-box,.scroll-box{
@@ -286,29 +288,45 @@ body {
 }
 
 @media (max-width: 768px){
+  .links{
+    padding: 10px;
+  }
+
+  .link{
+    padding: 2px;
+  }
+  .myname,.tagline-box,.typewriter-box,.cta-box,.scroll-box{
+  margin-top: 15px;
+  font-size: 20px;
+}
   .about-box,.about-title{
     margin-left: 20px;
     margin-right: 20px;
+    font-size: 10px;
   }
 
   .skills-box{
   margin-left: 20px;
   margin-right: 20px;
+  font-size: 10px;
 }
 
 .projects-box{
   margin-left: 20px;
   margin-right: 20px;
+  font-size: 10px;
 }
 
 .experience-box{
   margin-left: 20px;
   margin-right: 20px;
+  font-size: 10px;
 }
 
 #contact{
   margin-left: 20px;
   margin-right: 20px;
+  font-size: 10px;
 }
 
 

@@ -68,7 +68,7 @@ export default function Navbar() {
         </a>
 
         {/* Desktop links */}
-        <div className="hidden md:flex items-center">
+        <div className=" hidden md:flex items-center">
           {navLinks.map(link => (
             <a
               key={link.href}
@@ -104,13 +104,13 @@ export default function Navbar() {
           mobileOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         } bg-[#0a0a0f]/95 backdrop-blur-xl border-b border-white/5`}
       >
-        <div className="px-6 py-4 flex flex-col gap-2">
+        <div className="links px-6 py-4 flex flex-col gap-2">
           {navLinks.map(link => (
             <a
               key={link.href}
               href={link.href}
               onClick={(e) => handleClick(e, link.href)}
-              className={`px-4 py-3 rounded-lg text-sm font-medium transition-all duration-300 ${
+              className={`link px-4 py-3 rounded-lg text-sm font-medium transition-all duration-300 ${
                 activeSection === link.href.slice(1)
                   ? 'text-white bg-white/10'
                   : 'text-gray-400 hover:text-white hover:bg-white/5'
