@@ -269,13 +269,8 @@ body {
   padding: 2px;
 }
 
-#contact{
- display: flex;
- justify-content: center;
-}
-
-.contact-para{
-  padding: 5px;
+.contact-box{
+  margin-left: 300px;
 }
 
 .info-box,.social-links{
@@ -324,6 +319,12 @@ body {
 }
 
 #contact{
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 10px;
+}
+
+.contact-box{
   margin-left: 20px;
   margin-right: 20px;
   font-size: 10px;
