@@ -18,8 +18,16 @@ const projects = [
     tech: ['HTML', 'CSS', 'JavaScript'],
     github: 'https://github.com',
     live: 'https://taskflow.demo',
-    gradient: 'from-orange-500 to-pink-600',
+    gradient: 'from-indigo-500 to-purple-600',
     emoji: '📋',
+  },{
+    title:"Task Management",
+    subtitle:"Advanced",
+    description:"A Taskmangement application with backend , Users can add, update, delete, mark and search task as completed",
+    tech:["ReactJs","NodeJs","ExpressJs"],
+    github:"https://github.com/Akash-K973/TaskMangement",
+    gradient:"from-indigo-500 to-purple-600",
+    emoji:"📋",
   },
 ];
 
