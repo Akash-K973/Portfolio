@@ -35,13 +35,13 @@ export default function Projects() {
   const [ref, isVisible] = useScrollReveal();
 
   return (
-    <section id="projects" className="py-24 relative">
+    <section id="projects" className="py-24 relative"style={{background:"#050216"}}>
       <div className="decorate-line h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent" />
       <div className="projects-box max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <span className="text-indigo-400 font-mono text-sm tracking-wider uppercase">Portfolio</span>
           <h2 className="section-title mt-2 gradient-text">Featured Projects</h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mt-4 rounded-full" />
+          <div className="w-full h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mt-4 rounded-full" />
           <p className="projects-para text-gray-400 mt-4 max-w-lg mx-auto">Projects showcasing my skills and passion for building great software</p>
         </div>
         <div ref={ref} className={`grid md:grid-cols-2 gap-6 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>

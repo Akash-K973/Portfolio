@@ -7,6 +7,11 @@ const roles = [
   'Node.js Developer',
 ];
 
+const dots = Array.from({ length: 100 }, () => ({
+  left: `${Math.random() * 100}%`,
+  top: `${Math.random() * 100}%`,
+}));
+
 export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
   const [text, setText] = useState('');
@@ -40,11 +45,45 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
+
+
+      {/* Video Background */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+        autoPlay
+        loop
+        muted
+        playsInline
+        src="/videos/blackhole.webm"
+      />
+
+       {/* Star-like dots */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="relative w-full h-full">
+  {dots.map((dot, index) => (
+    <div
+      key={index}
+      className="absolute rounded-full"
+      style={{
+        ...dot,
+        
+        width: "2px",
+        height: "2px",
+        background: "#573BC8",
+        borderRadius: "9999px",
+        boxShadow: "0 0 4px #573BC8",
+      }}
+    />
+  ))}
+</div>
+      </div>
+      
+      
       {/* Animated background orbs */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-[128px] animate-float" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-500/10 rounded-full blur-[128px] animate-float" style={{ animationDelay: '2s' }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-cyan-500/5 rounded-full blur-[128px]" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-500/20 rounded-full blur-[128px] animate-float" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-500/20 rounded-full blur-[128px] animate-float" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[128px]" />
       </div>
 
       {/* Grid pattern */}
@@ -69,7 +108,7 @@ export default function Hero() {
         {/* Main heading */}
         <h1 className="myname text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.1] mb-6 animate-fade-in-up" style={{ animationDelay: '0.15s' }}>
           Hi, I&apos;m{' '}
-          <span className="gradient-text animate-gradient">Akash</span>
+          <span className="gradient-text">Akash</span>
         </h1>
 
         {/* Typewriter role */}
@@ -80,15 +119,15 @@ export default function Hero() {
         </div>
 
         {/* Tagline */}
-        <p className="tagline-box text-lg text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.45s' }}>
-          I craft <span className="text-white font-medium">performant</span>, <span className="text-white font-medium">scalable</span>, and{' '}
-          <span className="text-white font-medium">beautiful</span> web applications using the MERN stack.
+        <p className="tagline-box text-lg text-black max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.45s' }}>
+          I craft <span className="text-black  font-semibold">performant</span>, <span className="text-black  font-semibold">scalable</span>, and{' '}
+          <span className="text-black font-semibold">beautiful</span> web applications using the MERN stack.
           Passionate about turning ideas into production-ready digital experiences.
         </p>
 
         {/* CTA Buttons */}
         <div className="cta-box flex flex-wrap items-center justify-center gap-4 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-          <a href="#projects" onClick={(e) => handleScroll(e, '#projects')} className="glow-btn">
+          <a href="#projects" onClick={(e) => handleScroll(e, '#projects')} className="glow-btn-outline">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" /></svg>
             View Projects
           </a>
@@ -101,9 +140,9 @@ export default function Hero() {
         {/* Scroll indicator */}
         <div className="scroll-box mt-16 animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
           <a href="#about" onClick={(e) => handleScroll(e, '#about')} className="inline-flex flex-col items-center gap-2 text-gray-500 hover:text-indigo-400 transition-colors">
-            <span className="text-xs tracking-widest uppercase">Scroll Down</span>
+            <span className="text-xs tracking-widest">SCROLL DOWN</span>
             <div className="w-5 h-8 border-2 border-current rounded-full flex justify-center pt-1.5">
-              <div className="w-1 h-2 bg-current rounded-full animate-bounce" />
+              <div className="w-1 h-2 bg-current rounded-full animate-bounce"/>
             </div>
           </a>
         </div>

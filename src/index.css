@@ -232,9 +232,6 @@ body {
   padding: 5px;
 }
 
-.decorate-line{
-  margin: 30px;
-}
 
 .skill-box{
   padding: 5px;
@@ -312,17 +309,12 @@ body {
   font-size: 10px;
 }
 
-.experience-box{
+.experience-box,.contact-box{
   margin-left: 20px;
   margin-right: 20px;
   font-size: 10px;
 }
 
-#contact{
-  margin-left: 20px;
-  margin-right: 20px;
-  font-size: 10px;
-}
 
 .contact-box{
   display: flex;

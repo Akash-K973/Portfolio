@@ -91,7 +91,7 @@ export default function Skills() {
   const [ref, isVisible] = useScrollReveal();
 
   return (
-    <section id="skills" className="py-24 relative">
+    <section id="skills" className="py-24 relative" style={{background:"#050216"}}>
       {/* Background accent */}
       <div className="decorate-line h-px bg-gradient-to-r from-transparent via-indigo-500/30 to-transparent" />
 
@@ -100,7 +100,7 @@ export default function Skills() {
         <div className="text-center mb-16">
           <span className="text-indigo-400 font-mono text-sm tracking-wider uppercase">Skills & Tools</span>
           <h2 className="section-title mt-2 gradient-text">My Tech Stack</h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mt-4 rounded-full" />
+          <div className="w-full h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mt-4 rounded-full" />
           <p className="skills-para text-gray-400 mt-4 max-w-lg mx-auto">
             Technologies I work with daily to build modern, scalable web applications
           </p>

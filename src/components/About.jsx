@@ -4,19 +4,19 @@ export default function About() {
   const [ref, isVisible] = useScrollReveal();
 
   const highlights = [
-    { icon: '🚀', label: 'Projects Completed', value: '2+' },
+    { icon: '🚀', label: 'Projects Completed', value: '3+' },
     { icon: '💻', label: 'Technologies', value: '10+' },
     { icon: '☕', label: 'Cups of Coffee', value: '∞' },
   ];
 
   return (
-    <section id="about" className="py-24 relative">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="about" className="py-24 relative" style={{background:"#050216"}}>
+      <div className="max-w-7xl mx-auto px-6 ">
         {/* Section header */}
         <div className="about-title text-center mb-16">
           <span className="text-indigo-400 font-mono text-sm tracking-wider uppercase">About Me</span>
           <h2 className="section-title mt-2 gradient-text">Who I Am</h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mt-4 rounded-full" />
+          <div className="w-full h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mt-4 rounded-full" />
         </div>
         <div
           ref={ref}

@@ -29,8 +29,8 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-24 relative">
-      <div className=" decorate-line h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent" />
+    <section id="contact" className="py-24 relative"style={{background:"#050216"}}>
+      <div className="contact-box decorate-line h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent" />
       <div className="contact-box max-w-5xl mx-auto px-6">
         <div className="text-center mb-16">
           <span className="text-indigo-400 font-mono text-sm tracking-wider uppercase">Get In Touch</span>
