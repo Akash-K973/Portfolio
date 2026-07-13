@@ -31,12 +31,39 @@ const projects = [
   },
 ];
 
+const dots = Array.from({ length: 100 }, () => ({
+  left: `${Math.random() * 100}%`,
+  top: `${Math.random() * 100}%`,
+}));
+
 export default function Projects() {
   const [ref, isVisible] = useScrollReveal();
 
   return (
     <section id="projects" className="py-24 relative"style={{background:"#050216"}}>
+      {/* Star-like dots */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="relative w-full h-full">
+  {dots.map((dot, index) => (
+    <div
+      key={index}
+      className="absolute rounded-full"
+      style={{
+        ...dot,
+        
+        width: "2px",
+        height: "2px",
+        background: "#573BC8",
+        borderRadius: "9999px",
+        boxShadow: "0 0 4px #573BC8",
+      }}
+    />
+  ))}
+</div>
+      </div>
+      <div className="space-box w-2 h-6"></div>
       <div className="decorate-line h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent" />
+       <div className="space-box w-2 h-6"></div>
       <div className="projects-box max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <span className="text-indigo-400 font-mono text-sm tracking-wider uppercase">Portfolio</span>

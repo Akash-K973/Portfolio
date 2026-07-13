@@ -6,6 +6,11 @@ export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
 
+  const dots = Array.from({ length: 100 }, () => ({
+  left: `${Math.random() * 100}%`,
+  top: `${Math.random() * 100}%`,
+}));
+
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
   const handleSubmit = (e) => {
@@ -30,7 +35,29 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-24 relative"style={{background:"#050216"}}>
+      {/* Star-like dots */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="relative w-full h-full">
+  {dots.map((dot, index) => (
+    <div
+      key={index}
+      className="absolute rounded-full"
+      style={{
+        ...dot,
+        
+        width: "2px",
+        height: "2px",
+        background: "#573BC8",
+        borderRadius: "9999px",
+        boxShadow: "0 0 4px #573BC8",
+      }}
+    />
+  ))}
+</div>
+      </div>
+      <div className="space-box w-2 h-6"></div>
       <div className="contact-box decorate-line h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent" />
+       <div className="space-box w-2 h-6"></div>
       <div className="contact-box max-w-5xl mx-auto px-6">
         <div className="text-center mb-16">
           <span className="text-indigo-400 font-mono text-sm tracking-wider uppercase">Get In Touch</span>

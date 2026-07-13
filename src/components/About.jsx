@@ -3,6 +3,11 @@ import { useScrollReveal } from '../hooks/useScrollReveal';
 export default function About() {
   const [ref, isVisible] = useScrollReveal();
 
+  const dots = Array.from({ length: 100 }, () => ({
+  left: `${Math.random() * 100}%`,
+  top: `${Math.random() * 100}%`,
+}));
+
   const highlights = [
     { icon: '🚀', label: 'Projects Completed', value: '3+' },
     { icon: '💻', label: 'Technologies', value: '10+' },
@@ -12,11 +17,33 @@ export default function About() {
   return (
     <section id="about" className="py-24 relative" style={{background:"#050216"}}>
       <div className="max-w-7xl mx-auto px-6 ">
+         {/* Star-like dots */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="relative w-full h-full">
+  {dots.map((dot, index) => (
+    <div
+      key={index}
+      className="absolute rounded-full"
+      style={{
+        ...dot,
+        
+        width: "2px",
+        height: "2px",
+        background: "#573BC8",
+        borderRadius: "9999px",
+        boxShadow: "0 0 4px #573BC8",
+      }}
+    />
+  ))}
+</div>
+      </div>
+      
         {/* Section header */}
         <div className="about-title text-center mb-16">
           <span className="text-indigo-400 font-mono text-sm tracking-wider uppercase">About Me</span>
           <h2 className="section-title mt-2 gradient-text">Who I Am</h2>
           <div className="w-full h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mt-4 rounded-full" />
+          <div className="space-box w-2 h-6"></div>
         </div>
         <div
           ref={ref}
@@ -73,6 +100,7 @@ export default function About() {
                 </span>
                 <span className="text-2xl font-bold text-white block">{item.value}</span>
                 <span className="text-sm text-gray-400 mt-1 block">{item.label}</span>
+                
               </div>
             ))}
           </div>

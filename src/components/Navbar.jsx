@@ -76,7 +76,7 @@ export default function Navbar() {
               onClick={(e) => handleClick(e, link.href)}
               className={`hidden-items px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
                 activeSection === link.href.slice(1)
-                  ? 'text-white bg-white/10'
+                  ? 'text-indigo-400 bg-white/10'
                   : 'text-gray-400 hover:text-white hover:bg-white/5'
               }`}
             >
@@ -112,7 +112,7 @@ export default function Navbar() {
               onClick={(e) => handleClick(e, link.href)}
               className={`link px-4 py-3 rounded-lg text-sm font-medium transition-all duration-300 ${
                 activeSection === link.href.slice(1)
-                  ? 'text-white bg-white/10'
+                  ? 'text-indigo-300 bg-white/10'
                   : 'text-gray-400 hover:text-white hover:bg-white/5'
               }`}
             >

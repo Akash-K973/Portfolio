@@ -49,7 +49,7 @@ export default function Hero() {
 
       {/* Video Background */}
       <video
-        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+        className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-40"
         autoPlay
         loop
         muted
@@ -119,19 +119,19 @@ export default function Hero() {
         </div>
 
         {/* Tagline */}
-        <p className="tagline-box text-lg text-black max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.45s' }}>
-          I craft <span className="text-black  font-semibold">performant</span>, <span className="text-black  font-semibold">scalable</span>, and{' '}
-          <span className="text-black font-semibold">beautiful</span> web applications using the MERN stack.
+        <p className="tagline-box text-lg text-white max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.45s' }}>
+          I craft <span className="text-white  font-semibold">performant</span>, <span className="text-white  font-semibold">scalable</span>, and{' '}
+          <span className="text-white font-semibold">beautiful</span> web applications using the MERN stack.
           Passionate about turning ideas into production-ready digital experiences.
         </p>
 
         {/* CTA Buttons */}
         <div className="cta-box flex flex-wrap items-center justify-center gap-4 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-          <a href="#projects" onClick={(e) => handleScroll(e, '#projects')} className="glow-btn-outline">
+          <a href="#projects" onClick={(e) => handleScroll(e, '#projects')} className="glow-btn">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" /></svg>
             View Projects
           </a>
-          <a href="#contact" onClick={(e) => handleScroll(e, '#contact')} className="glow-btn-outline">
+          <a href="#contact" onClick={(e) => handleScroll(e, '#contact')} className="glow-btn">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
             Contact Me
           </a>

@@ -230,6 +230,15 @@ body {
 
 .skills-para,.projects-para,.contact-para{
   padding: 5px;
+  display:inline-block;
+  border:1px solid rgba(255,255,255,.1);
+  background:rgba(255,255,255,.03);
+  backdrop-filter:blur(10px);
+  border-radius:50px;
+  color:#d1d5db;
+  font-size:1rem;
+  box-shadow:0 0 25px rgba(139,92,246,.15);
+  margin: 15px;
 }
 
 
