@@ -29,6 +29,15 @@ const projects = [
     gradient:"from-indigo-500 to-purple-600",
     emoji:"📋",
   },
+  {
+    title:"Ai-Resume-Builder (on going)",
+    subtitle:"LLM API Integration",
+    description:"ATS-friendly resumes instantly using AI, with smart content generation, customizable templates, and downloadable PDF output in minutes.",
+    tech:["ReactJs","NodeJs","ExpressJs","GeminiApi"],
+    github:"https://github.com/Akash-K973/Ai-Resume-Builder",
+    gradient:"from-indigo-500 to-purple-600",
+    emoji:"🤖"
+  }
 ];
 
 const dots = Array.from({ length: 100 }, () => ({
